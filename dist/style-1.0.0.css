@@ -1,11 +1,10 @@
-@font-face {
-    font-family: 'Roboto';
-    src: url('https://fontscdn.blob.core.windows.net/fonts/assets/Roboto-Bold.ttf') format('ttf'),
-         url('https://fontscdn.blob.core.windows.net/fonts/Roboto-Regular.ttf') format('ttf'),
-         url('https://fontscdn.blob.core.windows.net/fonts/Roboto-Italic.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-  }
+  @font-face {
+     font-family: 'Roboto';
+     src: url('https://fontscdn.blob.core.windows.net/fonts/assets/Roboto-Italic.ttf') format('truetype');
+     font-weight: 500;
+     font-style: italic;
+     font-display: swap;
+   }
   
 
   h1 {

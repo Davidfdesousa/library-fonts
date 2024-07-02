@@ -29,4 +29,4 @@ jobs:
       with:
         inlineScript: |
           # Configurar a conta de armazenamento e a chave
-          az storage blob upload-batch -d 'fonts' --account-name fontscdn --account-key ${{ secrets.AZURE_STORAGE_KEY }} -s ./dist
+          az storage blob upload-batch -d 'fonts' --account-name fontscdn --account-key ${{ secrets.AZURE_STORAGE_KEY }} -s ./dist --overwrite

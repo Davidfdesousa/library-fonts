@@ -1,0 +1,32 @@
+name: Deploy to Azure Blob Storage
+
+on:
+  push:
+    branches:
+      - main  # Substitua pela branch que você deseja monitorar
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'  # Substitua pela versão do Node.js que você está usando
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build  # Substitua pelo comando para construir seu projeto, se necessário
+
+    - name: Upload to Azure Blob Storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          # Configurar a conta de armazenamento e a chave
+          az storage blob upload-batch -d '$web' --account-name fontscdn --account-key ${{ secrets.AZURE_STORAGE_KEY }} -s ./dist
